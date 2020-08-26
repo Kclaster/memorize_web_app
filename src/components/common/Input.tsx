@@ -19,6 +19,7 @@ const StyledInput = styled.input({
   fontSize: '18px',
   outline: 0,
   padding: '10px',
+  color: Styles.colors.grey
 });
 
 const Divider = styled.div({

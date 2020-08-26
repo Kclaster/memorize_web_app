@@ -7,7 +7,7 @@ import Text from '.';
 // Component Definition
 const Heading1: React.FC = (props) => {
   return (
-    <Text fontSize="lg">
+    <Text fontSize="28px">
       {props.children}
     </Text>
   );

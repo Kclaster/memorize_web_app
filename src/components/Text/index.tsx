@@ -3,26 +3,24 @@ import { css } from 'emotion';
 import React from 'react';
 
 // Internal Dependencies
-import { FontSizes } from '../../../constants/sizes';
-import { BASE_COLORS } from '../../../constants/styles';
-import { getFontSize } from '../../../utils/sizes';
+import Styles from '../../constants/styles';
 
 // Local Typings
 export interface TextProps {
   as?: any;
   color?: string;
-  fontSize?: FontSizes;
+  fontSize?: string;
   fontWeight?: number;
 }
 
 // Local Variable
 const getStyle = ({
   color,
-  fontSize = 'md',
+  fontSize = '16px',
   fontWeight = 400,
 }: TextProps) => css({
-  color: color ? color : BASE_COLORS.WHITE,
-  fontSize: getFontSize(fontSize),
+  color: color ? color : Styles.colors.grey,
+  fontSize: fontSize,
   fontWeight,
   textDecoration: 'none',
 });

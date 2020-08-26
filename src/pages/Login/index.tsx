@@ -9,6 +9,7 @@ import { LOGIN_REQUEST } from '../../redux/reducers/auth';
 import { usePasswordField, useTextField } from '../../hooks';
 import { useDispatch } from 'react-redux';
 import Styles from '../../constants/styles';
+import Heading1 from '../../components/Text/Heading1';
 
 // Internal Dependencies
 
@@ -56,8 +57,12 @@ const Login: React.FC<Props> = (props) => {
     <StyledPopout>
       <LeftWrapper />
       <RightWrapper>
+
         <Form onSubmit={handleLogin}>
           <FormWrapper>
+          <Heading1>
+            Sign In
+          </Heading1>
           <Input
             {...usernameField}
             placeholder="Username"

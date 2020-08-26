@@ -8,7 +8,7 @@ import Text, { TextProps } from '.';
 const Heading2: React.FC<TextProps> = (props) => {
   return (
     <Text
-      fontSize="md"
+      fontSize="22px"
       {...props}
     >
       {props.children}
