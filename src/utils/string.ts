@@ -1,6 +1,5 @@
 // Local Typings
 export interface ParsedToken {
-  authorities: Authorities;
   exp: number;
   iat: number;
   operatorId: string;

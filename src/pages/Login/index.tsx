@@ -4,10 +4,10 @@ import Popout from '../../components/layout/Popout';
 import styled from '@emotion/styled';
 import Styles from '../../constants/styles';
 import LoginForm from './LoginForm';
-import Icon from '../../components/common/Icon';
 import Heading1 from '../../components/Text/Heading1';
 import Paragraph from '../../components/Text/Paragraph';
 import Image from '../../components/common/Image';
+import LoginListener from './LoginListener';
 
 // Internal Dependencies
 
@@ -52,7 +52,9 @@ const Login: React.FC<Props> = (props) => {
         </Paragraph>
       </LeftWrapper>
       <RightWrapper>
-        <LoginForm />
+        <LoginListener>
+          <LoginForm />
+        </LoginListener>
       </RightWrapper>
     </StyledPopout>
   );

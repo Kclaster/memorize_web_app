@@ -24,7 +24,7 @@ const basePath = 'api/v1/auth';
 
 // Exports
 export const login: LoginRequest = data => {
-  const endpoint = `${basePath}/login`;
+  const endpoint = `${basePath}/authenticate`;
 
   return postRequest({
     data,
