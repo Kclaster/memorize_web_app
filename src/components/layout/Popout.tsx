@@ -12,7 +12,7 @@ interface Props {
 
 // Local Variables
 const Wrapper = styled.div({
-boxShadow: 'inset 0 0 10px #000000',
+boxShadow: '0 0 10px #000000',
 width: '80%',
 height:'80%',
 margin: 'auto auto'

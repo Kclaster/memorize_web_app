@@ -8,6 +8,7 @@ import Button from '../../components/common/Button';
 import { LOGIN_REQUEST } from '../../redux/reducers/auth';
 import { usePasswordField, useTextField } from '../../hooks';
 import { useDispatch } from 'react-redux';
+import Styles from '../../constants/styles';
 
 // Internal Dependencies
 
@@ -19,10 +20,12 @@ const StyledPopout = styled(Popout)({
   display: 'flex'
 })
 const LeftWrapper = styled.div({
+  backgroundColor: Styles.colors.brand.dark,
   height: '100%',
   width: '60%',
 })
 const RightWrapper = styled.div({
+  backgroundColor: Styles.colors.white,
   height: '100%',
   width: '40%'
 })
@@ -55,6 +58,10 @@ const Login: React.FC<Props> = (props) => {
             placeholder="Password"
           />
           <Button
+            gradientBackground={{
+              firstColor: Styles.colors.brand.light,
+              secondColor: Styles.colors.brand.dark 
+            }}
             type="submit"
           >
             log in

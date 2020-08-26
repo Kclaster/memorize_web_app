@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import Styles, { Colors } from '../../constants/styles';
 
 // Local Typings
-interface Props {
+interface Props extends StyledButtonProps {
   onClick?: (evt: React.MouseEvent<HTMLButtonElement>) => void;
   type?: ButtonType
 }
@@ -15,12 +15,23 @@ type ButtonType = 'submit' | 'button';
 
 interface StyledButtonProps {
   backgroundColor?: Colors;
+  gradientBackground?: GradientBackgroundColorProps;
   color?: Colors
+}
+
+interface GradientBackgroundColorProps {
+  firstColor: Colors,
+  secondColor: Colors,
 }
 
 // Local Variables
 const getBackgroundColor = (
-  backgroundColor: Colors) => {
+  backgroundColor: Colors,
+  gradientBackground?: GradientBackgroundColorProps,
+  ) => {
+    if (gradientBackground) {
+      return `linear-gradient(90deg, ${gradientBackground.firstColor}, ${gradientBackground.secondColor})`
+    }
   return Styles.colors[backgroundColor];
 };
 
@@ -30,13 +41,14 @@ const getColor = (color: Colors) => {
 
 const StyledButton = styled.button(({
   backgroundColor = 'grey',
+  gradientBackground,
   color = 'white',
 }: StyledButtonProps) => ({
   '&:hover': {
-    backgroundColor: getBackgroundColor(color),
+    backgroundColor: getBackgroundColor(color, gradientBackground),
     color: getColor(backgroundColor),
   },
-  background: getBackgroundColor(backgroundColor),
+  background: getBackgroundColor(backgroundColor, gradientBackground),
   border: 'none',
   borderRadius: '3px',
   color: getColor(color),

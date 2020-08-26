@@ -2,13 +2,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Div100vh from 'react-div-100vh';
-
+import Styles from '../../constants/styles';
 
 // Local Variables
 const StyledDiv100vh = styled(Div100vh)({
   alignItems: 'stretch',
   display: 'flex',
   flexDirection: 'column',
+  background: `linear-gradient(45deg, ${Styles.colors.brand.light}, ${Styles.colors.white})`
 });
 
 // Component Definition
