@@ -1,14 +1,4 @@
-export type Colors =
-  'black'
-  | 'error'
-  | 'brand'
-  | 'grey'
-  | 'lightGrey'
-  | 'success'
-  | 'warning'
-  | 'white';
-
-const colors: Record<Colors, any> = {
+const colors: Record<string, any> = {
   black: '#101010',
   brand: {
     light: '#57A9EA',

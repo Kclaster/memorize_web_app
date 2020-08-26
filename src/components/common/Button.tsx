@@ -3,7 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 // Internal Dependencies
-import Styles, { Colors } from '../../constants/styles';
+import Styles from '../../constants/styles';
 
 // Local Typings
 interface Props extends StyledButtonProps {
@@ -14,50 +14,60 @@ interface Props extends StyledButtonProps {
 type ButtonType = 'submit' | 'button';
 
 interface StyledButtonProps {
-  backgroundColor?: Colors;
+  backgroundColor?: string;
   gradientBackground?: GradientBackgroundColorProps;
-  color?: Colors
+  color?: string
 }
 
 interface GradientBackgroundColorProps {
-  firstColor: Colors,
-  secondColor: Colors,
+  firstColor: string,
+  secondColor: string,
 }
 
 // Local Variables
 const getBackgroundColor = (
-  backgroundColor: Colors,
+  backgroundColor?: string,
   gradientBackground?: GradientBackgroundColorProps,
   ) => {
-    if (gradientBackground) {
+    console.log({backgroundColor})
+    if (!!gradientBackground) {
       return `linear-gradient(90deg, ${gradientBackground.firstColor}, ${gradientBackground.secondColor})`
     }
-  return Styles.colors[backgroundColor];
+  return backgroundColor;
 };
 
-const getColor = (color: Colors) => {
-  return Styles.colors[color];
-};
+const reverseGradients = (gradientBackground?: GradientBackgroundColorProps) => {
+  console.log("firing")
+  return gradientBackground ? (
+    {
+      firstColor: gradientBackground.secondColor,
+      secondColor: gradientBackground.firstColor,
+    }) : undefined 
+}
+
 
 const StyledButton = styled.button(({
-  backgroundColor = 'grey',
+  backgroundColor,
   gradientBackground,
   color = 'white',
 }: StyledButtonProps) => ({
   '&:hover': {
-    backgroundColor: getBackgroundColor(color, gradientBackground),
-    color: getColor(backgroundColor),
+    background: getBackgroundColor(
+      color,
+      reverseGradients(gradientBackground)
+      ),
+    color: backgroundColor || Styles.colors.white,
   },
   background: getBackgroundColor(backgroundColor, gradientBackground),
   border: 'none',
   borderRadius: '3px',
-  color: getColor(color),
+  color: Styles.colors.white,
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: 'inherit',
   outline: 'none',
   padding: '12px 30px',
-  transition: 'color .3s',
+  transition: 'color .3s, background .3',
 
 }));
 

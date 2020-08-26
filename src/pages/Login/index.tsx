@@ -29,6 +29,14 @@ const RightWrapper = styled.div({
   height: '100%',
   width: '40%'
 })
+const FormWrapper = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  padding: '16px'
+})
+const StyledButton = styled(Button)({
+  marginTop: '16px',
+})
 
 // Component Definition
 const Login: React.FC<Props> = (props) => {
@@ -49,6 +57,7 @@ const Login: React.FC<Props> = (props) => {
       <LeftWrapper />
       <RightWrapper>
         <Form onSubmit={handleLogin}>
+          <FormWrapper>
           <Input
             {...usernameField}
             placeholder="Username"
@@ -57,15 +66,21 @@ const Login: React.FC<Props> = (props) => {
             {...passwordField}
             placeholder="Password"
           />
-          <Button
+          <StyledButton
             gradientBackground={{
               firstColor: Styles.colors.brand.light,
               secondColor: Styles.colors.brand.dark 
             }}
             type="submit"
           >
-            log in
-          </Button>
+            Log In
+          </StyledButton>
+          <StyledButton
+            backgroundColor={Styles.colors.brand.dark}
+          >
+            Register
+          </StyledButton>
+          </FormWrapper>
         </Form>
       </RightWrapper>
     </StyledPopout>

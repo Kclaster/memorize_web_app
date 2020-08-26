@@ -15,13 +15,17 @@ interface Props {
 // Local Variables
 const StyledInput = styled.input({
   background: 'transparent',
-  borderColor: Styles.colors.grey,
-  borderWidth: '0 0 2px',
+  border: 'none',
   fontSize: '18px',
-  margin: '10px',
   outline: 0,
   padding: '10px',
 });
+
+const Divider = styled.div({
+  backgroundImage: `linear-gradient(45deg, ${Styles.colors.brand.light}, ${Styles.colors.brand.dark})`,
+  height: '2px',
+  marginBottom: '12px',
+})
 
 // Component Definition
 const Input: React.FC<Props> = ({
@@ -33,10 +37,13 @@ const Input: React.FC<Props> = ({
   };
 
   return (
+    <>
     <StyledInput
       onChange={handleChange}
       {...props}
     />
+    <Divider />
+    </>
   );
 };
 
