@@ -4,6 +4,7 @@ import Popout from '../../components/layout/Popout';
 import styled from '@emotion/styled';
 import Styles from '../../constants/styles';
 import LoginForm from './LoginForm';
+import Icon from '../../components/common/Icon';
 
 // Internal Dependencies
 
@@ -30,7 +31,13 @@ const RightWrapper = styled.div({
 const Login: React.FC<Props> = (props) => {
   return(
     <StyledPopout>
-      <LeftWrapper />
+      <LeftWrapper>
+        <Icon 
+        name="lightbulb"
+        color={Styles.colors.warning}
+        size="120px"
+        />
+      </LeftWrapper>
       <RightWrapper>
         <LoginForm />
       </RightWrapper>
