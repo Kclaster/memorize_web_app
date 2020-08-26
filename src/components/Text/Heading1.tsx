@@ -1,13 +1,16 @@
 // External Dependencies
 import React from 'react';
-import Text from '.';
+import Text, { TextProps } from '.';
 
 // Internal Dependencies
 
 // Component Definition
-const Heading1: React.FC = (props) => {
+const Heading1: React.FC<TextProps>  = (props) => {
   return (
-    <Text fontSize="28px">
+    <Text 
+    fontSize="28px"
+    {...props}
+    >
       {props.children}
     </Text>
   );

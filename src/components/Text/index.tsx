@@ -23,6 +23,7 @@ const getStyle = ({
   fontSize: fontSize,
   fontWeight,
   textDecoration: 'none',
+  margin: '0px'
 });
 
 // Component Definition

@@ -5,6 +5,9 @@ import styled from '@emotion/styled';
 import Styles from '../../constants/styles';
 import LoginForm from './LoginForm';
 import Icon from '../../components/common/Icon';
+import Heading1 from '../../components/Text/Heading1';
+import Paragraph from '../../components/Text/Paragraph';
+import Image from '../../components/common/Image';
 
 // Internal Dependencies
 
@@ -19,6 +22,9 @@ const LeftWrapper = styled.div({
   backgroundColor: Styles.colors.brand.dark,
   height: '100%',
   width: '60%',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
 })
 const RightWrapper = styled.div({
   backgroundColor: Styles.colors.white,
@@ -32,11 +38,18 @@ const Login: React.FC<Props> = (props) => {
   return(
     <StyledPopout>
       <LeftWrapper>
-        <Icon 
-        name="lightbulb"
-        color={Styles.colors.warning}
-        size="120px"
+        <Image 
+          src={require('../../assets/images/incognito.png')}
+          alt="Sleuth Icon"
+          height={50}
+          width={50}
         />
+        <Heading1 color={Styles.colors.white}>
+          Memorize
+        </Heading1>
+        <Paragraph color={Styles.colors.white}>
+          Apply your memory techniques. We'll analyze them for you.
+        </Paragraph>
       </LeftWrapper>
       <RightWrapper>
         <LoginForm />

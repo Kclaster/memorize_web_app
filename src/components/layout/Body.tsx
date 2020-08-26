@@ -3,6 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Div100vh from 'react-div-100vh';
 import Styles from '../../constants/styles';
+import Footer from './Footer';
 
 // Local Variables
 const StyledDiv100vh = styled(Div100vh)({
@@ -17,6 +18,7 @@ const Body: React.FC = props => {
   return (
     <StyledDiv100vh>
       {props.children}
+      <Footer />
     </StyledDiv100vh>
   );
 };
